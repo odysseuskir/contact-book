@@ -1,515 +1,476 @@
 '''
 Authors: Odysseus-Abraham Kirikopoulos
-Copyright notice: The following program is protected from European Commission, Article 17. More details: https://ec.europa.eu/commission/presscorner/detail/en/IP_21_1807
-(C) ALL RIGHTS RESERVED - ODYSSEUS-ABRAHAM KIRIKOPOULOS - 2022
+License: GNU General Public License v3.0
 Version: 1.2 beta
 '''
 
-#Variables
-contact_1 = ""
-contact_1_full_name = ""
-contact_1_phone = ""
-contact_1_address = ""
-contact_1_info = [contact_1_full_name , contact_1_phone , contact_1_address]
-contact_2 = ""
-contact_2_full_name = ""
-contact_2_phone = ""
-contact_2_address = ""
-contact_2_info = [contact_2_full_name , contact_2_phone , contact_2_address]
-contact_3 = ""
-contact_3_full_name = ""
-contact_3_phone = ""
-contact_3_address = ""
-contact_3_info = [contact_3_full_name , contact_3_phone , contact_3_address]
-contact_4 = ""
-contact_4_full_name = ""
-contact_4_phone = ""
-contact_4_address = ""
-contact_4_info = [contact_4_full_name , contact_4_phone , contact_4_address]
-contact_5 = ""
-contact_5_full_name = ""
-contact_5_phone = ""
-contact_5_address = ""
-contact_5_info = [contact_5_full_name , contact_5_phone , contact_5_address]
-contact_6 = ""
-contact_6_full_name = ""
-contact_6_phone = ""
-contact_6_address = ""
-contact_6_info = [contact_6_full_name , contact_6_phone , contact_6_address]
-contact_7 = ""
-contact_7_full_name = ""
-contact_7_phone = ""
-contact_7_address = ""
-contact_7_info = [contact_7_full_name , contact_7_phone , contact_7_address]
-contact_8 = ""
-contact_8_full_name = ""
-contact_8_phone = ""
-contact_8_address = ""
-contact_8_info = [contact_8_full_name , contact_8_phone , contact_8_address]
-contact_9 = ""
-contact_9_full_name = ""
-contact_9_phone = ""
-contact_9_address = ""
-contact_9_info = [contact_9_full_name , contact_9_phone , contact_9_address]
-contact_10 = ""
-contact_10_full_name = ""
-contact_10_phone = ""
-contact_10_address = ""
-contact_10_info = [contact_10_full_name , contact_10_phone , contact_10_address]
-options = "Select one: [Name]\n[Phone Number]\n[Address]"
-contact_options = f"Select a contact to open:\n1) {contact_1}\n2) {contact_2}\n3) {contact_3}\n4) {contact_4}\n5) {contact_5}\n6) {contact_6}\n7) {contact_7}\n8) {contact_8}\n9) {contact_9}\n10) {contact_10}"
+contact_1_name = ""
+contact_1 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_2_name = ""
+contact_2 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_3_name = ""
+contact_3 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_4_name = ""
+contact_4 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_5_name = ""
+contact_5 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_6_name = ""
+contact_6 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_7_name = ""
+contact_7 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_8_name = ""
+contact_8 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_9_name = ""
+contact_9 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
+contact_10_name = ""
+contact_10 = {"Name": "", "Surname": "", "Phone number": "", "Home adress": ""}
 operation = 0
 contact_choosen = 0
 option = 0
 
-#Startup
-print("Lanching...\n")
+def select_contact():
+    contact_choosen = input(f"Select a contact:\n{contact_1_name}\n{contact_2_name}\n{contact_3_name}\n{contact_4_name}\n{contact_5_name}\n{contact_6_name}\n{contact_7_name}\n{contact_8_name}\n{contact_9_name}\n{contact_10_name}\n")
+
+
 print("Author: Odysseus-Abraham Kirikopoulos")
-print("Copyrigh notice: (C) ALL RIGHTS RESERVED - ODYSSEUS ABRAHAM KIRIKOPOULOS - 2022")
-print("Build Version: 1.2 Beta\n\n\n")
+print("License: GNU General Public License v3.0")
+print("Build Version: 1.2 Beta")
 
-#Menu
-print("MY CONTACT LIST")
-print("You are in the main menu. Select an operation")
+print("\nContact List\nSelect an operation")
 
-#Operations
+while operation != 0:
 
-while(operation != 6):
-    print("1) View your contact list\n2) View a contact\n3) Create a contact\n4) Edit a contact\n5) Delete a contact\n6) Exit")
+    print("1) View your contacts\n2) View a contact's details\n3) Create a new contact\n4) Edit a contact\n5) Delete a contact\nTo exit press 0")
+
+    operation = input()
+
     while True:
-        operation = input("Select an operation: ")
 
-        if(operation == "1"):
-            print(f"1) {contact_1}\n2) {contact_2}\n3) {contact_3}\n4) {contact_4}\n5) {contact_5}\n6) {contact_6}\n7) {contact_7}\n8) {contact_8}\n9) {contact_9}\n10) {contact_10}")
+        if operation == 0:
             break
 
-        if(operation == "2"):
-            print(contact_options)
-            contact_choosen = input()
-            if(contact_choosen == contact_1):
-                print(contact_1_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_2):
-                print(contact_2_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_3):
-                print(contact_3_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_4):
-                print(contact_4_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_5):
-                print(contact_5_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_6):
-                print(contact_6_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_7):
-                print(contact_7_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_8):
-                print(contact_8_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_9):
-                print(contact_9_info)
-                contact_choosen = 0
-                break
-            if(contact_choosen == contact_10):
-                print(contact_10_info)
-                contact_choosen = 0
-                break
+        elif operation == 1:
+            print(f"1) {contact_1_name}\n2) {contact_2_name}\n3) {contact_3_name}\n4) {contact_4_name}\n5) {contact_5_name}\n6) {contact_6_name}\n7) {contact_7_name}\n8) {contact_8_name}\n9) {contact_9_name}\n10) {contact_10_name}\n")
+            break
+
+        elif operation == 2:
+
+            select_contact()
+
+            if contact_choosen == "":
+                print("Err:ContactNotUsable")
+
+            elif contact_choosen == contact_1_name:
+                print(contact_1)
+
+            elif contact_choosen == contact_2_name:
+                print(contact_2)
+
+            elif contact_choosen == contact_3_name:
+                print(contact_3)
+
+            elif contact_choosen == contact_4_name:
+                print(contact_4)
+
+            elif contact_choosen == contact_5_name:
+                print(contact_5)
+
+            elif contact_choosen == contact_6_name:
+                print(contact_6)
+
+            elif contact_choosen == contact_7_name:
+                print(contact_7)
+
+            elif contact_choosen == contact_8_name:
+                print(contact_8)
+
+            elif contact_choosen == contact_9_name:
+                print(contact_9)
+
+            elif contact_choosen == contact_10_name:
+                print(contact_10)
+
             else:
-                print("Err404c: Unknown Contact")
-                contact_choosen = 0
-                break
+                print("Err:ListNotFound")
 
-        if(operation == "3"):
-            if(contact_1 == ""):
-                contact_1 = input("Name the contact: ")
-                contact_1_full_name = input("What's the name of the contact: ")
-                contact_1_phone = input("What's the phone number of the contact: ")
-                contact_1_address = input("What's the address of the contact: ")
-                contact_1_info = [contact_1_full_name , contact_1_phone , contact_1_address]
-            elif(contact_2 == ""):
-                contact_2 = input("Name the contact: ")
-                contact_2_full_name = input("What's the name of the contact: ")
-                contact_2_phone = input("What's the phone number of the contact: ")
-                contact_2_address = input("What's the address of the contact: ")
-                contact_2_info = [contact_2_full_name , contact_2_phone , contact_2_address]
-            elif(contact_3 == ""):
-                contact_3 = input("Name the contact: ")
-                contact_3_full_name = input("What's the name of the contact: ")
-                contact_3_phone = input("What's the phone number of the contact: ")
-                contact_3_address = input("What's the address of the contact: ")
-                contact_3_info = [contact_3_full_name , contact_3_phone , contact_3_address]
-            elif(contact_4 == ""):
-                contact_4 = input("Name the contact: ")
-                contact_4_full_name = input("What's the name of the contact: ")
-                contact_4_phone = input("What's the phone number of the contact: ")
-                contact_4_address = input("What's the address of the contact: ")
-                contact_4_info = [contact_4_full_name , contact_4_phone , contact_4_address]
-            elif(contact_5 == ""):
-                contact_5 = input("Name the contact: ")
-                contact_5_full_name = input("What's the name of the contact: ")
-                contact_5_phone = input("What's the phone number of the contact: ")
-                contact_5_address = input("What's the address of the contact: ")
-                contact_5_info = [contact_5_full_name , contact_5_phone , contact_5_address]
-            elif(contact_6 == ""):
-                contact_6 = input("Name the contact: ")
-                contact_6_full_name = input("What's the name of the contact: ")
-                contact_6_phone = input("What's the phone number of the contact: ")
-                contact_6_address = input("What's the address of the contact: ")
-                contact_6_info = [contact_6_full_name , contact_6_phone , contact_6_address]
-            elif(contact_7 == ""):
-                contact_7 = input("Name the contact: ")
-                contact_7_full_name = input("What's the name of the contact: ")
-                contact_7_phone = input("What's the phone number of the contact: ")
-                contact_7_address = input("What's the address of the contact: ")
-                contact_7_info = [contact_7_full_name , contact_7_phone , contact_7_address]
-            elif(contact_8 == ""):
-                contact_8 = input("Name the contact: ")
-                contact_8_full_name = input("What's the name of the contact: ")
-                contact_8_phone = input("What's the phone number of the contact: ")
-                contact_8_address = input("What's the address of the contact: ")
-                contact_8_info = [contact_8_full_name , contact_8_phone , contact_8_address]
-            elif(contact_9 == ""):
-                contact_9 = input("Name the contact: ")
-                contact_9_full_name = input("What's the name of the contact: ")
-                contact_9_phone = input("What's the phone number of the contact: ")
-                contact_9_address = input("What's the address of the contact: ")
-                contact_9_info = [contact_9_full_name , contact_9_phone , contact_9_address]
-            elif(contact_10 == ""):
-                contact_10 = input("Name the contact: ")
-                contact_10_full_name = input("What's the name of the contact: ")
-                contact_10_phone = input("What's the phone number of the contact: ")
-                contact_10_address = input("What's the address of the contact: ")
-                contact_10_info = [contact_10_full_name , contact_10_phone , contact_10_address]
+        elif operation == "3":
+
+            if contact_1_name == "":
+
+                contact_1["Name"] = input("Enter the name of the contact: ")
+
+                contact_1["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_1["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_1["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_1_name = f"{contact_1['Name']} {contact_1['Surname']}"
+
+            if contact_2_name == "":
+
+                contact_2["Name"] = input("Enter the name of the contact: ")
+
+                contact_2["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_2["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_2["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_2_name = f"{contact_2['Name']} {contact_2['Surname']}"
+
+            if contact_3_name == "":
+
+                contact_3["Name"] = input("Enter the name of the contact: ")
+
+                contact_3["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_3["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_3["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_3_name = f"{contact_3['Name']} {contact_3['Surname']}"
+
+            if contact_4_name == "":
+
+                contact_4["Name"] = input("Enter the name of the contact: ")
+
+                contact_4["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_4["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_4["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_4_name = f"{contact_4['Name']} {contact_4['Surname']}"
+
+            if contact_5_name == "":
+
+                contact_5["Name"] = input("Enter the name of the contact: ")
+
+                contact_5["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_5["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_5["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_5_name = f"{contact_5['Name']} {contact_5['Surname']}"
+
+            if contact_6_name == "":
+
+                contact_6["Name"] = input("Enter the name of the contact: ")
+
+                contact_6["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_6["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_6["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_6_name = f"{contact_6['Name']} {contact_6['Surname']}"
+
+            if contact_7_name == "":
+
+                contact_7["Name"] = input("Enter the name of the contact: ")
+
+                contact_7["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_7["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_7["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_7_name = f"{contact_7['Name']} {contact_7['Surname']}"
+
+            if contact_8_name == "":
+
+                contact_8["Name"] = input("Enter the name of the contact: ")
+
+                contact_8["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_8["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_8["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_8_name = f"{contact_8['Name']} {contact_8['Surname']}"
+
+            if contact_9_name == "":
+
+                contact_9["Name"] = input("Enter the name of the contact: ")
+
+                contact_9["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_9["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_9["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_9_name = f"{contact_9['Name']} {contact_9['Surname']}"
+
+            if contact_10_name == "":
+
+                contact_10["Name"] = input("Enter the name of the contact: ")
+
+                contact_10["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_10["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_10["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_10_name = f"{contact_10['Name']} {contact_10['Surname']}"
+
             else:
-                print("Err503strg: Contact limit reached")
+                print("Err:NoFreeSpace")
 
-        if(operation == "4"):
-            print(contact_options)
-            contact_choosen = input()
-            if(contact_choosen == contact_1):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_1_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_1_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_1_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_2):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_2_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_2_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_2_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_3):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_3_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_3_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_3_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_4):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_4_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_4_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_4_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_5):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_5_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_5_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_5_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_6):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_6_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_6_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_6_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_7):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_7_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_7_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_7_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_8):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_8_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_8_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_8_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_9):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_9_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_9_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_9_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            if(contact_choosen == contact_10):
-                print(options)
-                option = input()
-                if(option == "Name"):
-                    contact_10_full_name = input("Edit the full name: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Phone Number"):
-                    contact_10_phone = input("Edit the phone number: ")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                if(option == "Address"):
-                    contact_10_address = input("Edit the address")
-                    option = 0
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404eco: Unknown Operation")
-                    break
-            
-            if(operation == "5"):
-                print(contact_options)
-                contact_choosen = input()
-                if(contact_choosen == contact_1):
-                    contact_1 = ""
-                    contact_1_info = ""
-                    contact_1_full_name = ""
-                    contact_1_phone = ""
-                    contact_1_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_2):
-                    contact_2 = ""
-                    contact_2_info = ""
-                    contact_2_full_name = ""
-                    contact_2_phone = ""
-                    contact_2_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_3):
-                    contact_3 = ""
-                    contact_3_info = ""
-                    contact_3_full_name = ""
-                    contact_3_phone = ""
-                    contact_3_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_4):
-                    contact_4 = ""
-                    contact_4_info = ""
-                    contact_4_full_name = ""
-                    contact_4_phone = ""
-                    contact_4_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_5):
-                    contact_5 = ""
-                    contact_5_info = ""
-                    contact_5_full_name = ""
-                    contact_5_phone = ""
-                    contact_5_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_6):
-                    contact_6 = ""
-                    contact_6_info = ""
-                    contact_6_full_name = ""
-                    contact_6_phone = ""
-                    contact_6_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_7):
-                    contact_7 = ""
-                    contact_7_info = ""
-                    contact_7_full_name = ""
-                    contact_7_phone = ""
-                    contact_7_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_8):
-                    contact_8 = ""
-                    contact_8_info = ""
-                    contact_8_full_name = ""
-                    contact_8_phone = ""
-                    contact_8_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_9):
-                    contact_9 = ""
-                    contact_9_info = ""
-                    contact_9_full_name = ""
-                    contact_9_phone = ""
-                    contact_9_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                if(contact_choosen == contact_10):
-                    contact_10 = ""
-                    contact_10_info = ""
-                    contact_10_full_name = ""
-                    contact_10_phone = ""
-                    contact_10_address = ""
-                    print("Everything has been deleted")
-                    contact_choosen = 0
-                    break
-                else:
-                    print("Err404dc: Unknown Contact")
-                    break
-            
+        elif operation == 4:
+
+            select_contact()
+
+            if contact_choosen == contact_1_name:
+
+                contact_1["Name"] = input("Enter the name of the contact: ")
+
+                contact_1["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_1["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_1["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_1_name = f"{contact_1['Name']} {contact_1['Surname']}"
+
+            if contact_choosen == contact_2_name:
+
+                contact_2["Name"] = input("Enter the name of the contact: ")
+
+                contact_2["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_2["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_2["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_2_name = f"{contact_2['Name']} {contact_2['Surname']}"
+
+            if contact_choosen == contact_3_name:
+
+                contact_3["Name"] = input("Enter the name of the contact: ")
+
+                contact_3["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_3["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_3["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_3_name = f"{contact_3['Name']} {contact_3['Surname']}"
+
+            if contact_choosen == contact_4_name:
+
+                contact_4["Name"] = input("Enter the name of the contact: ")
+
+                contact_4["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_4["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_4["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_4_name = f"{contact_4['Name']} {contact_4['Surname']}"
+
+            if contact_choosen == contact_5_name:
+
+                contact_5["Name"] = input("Enter the name of the contact: ")
+
+                contact_5["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_5["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_5["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_5_name = f"{contact_5['Name']} {contact_5['Surname']}"
+
+            if contact_choosen == contact_6_name:
+
+                contact_6["Name"] = input("Enter the name of the contact: ")
+
+                contact_6["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_6["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_6["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_6_name = f"{contact_6['Name']} {contact_6['Surname']}"
+
+            if contact_choosen == contact_7_name:
+
+                contact_7["Name"] = input("Enter the name of the contact: ")
+
+                contact_7["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_7["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_7["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_7_name = f"{contact_7['Name']} {contact_7['Surname']}"
+
+            if contact_choosen == contact_8_name:
+
+                contact_8["Name"] = input("Enter the name of the contact: ")
+
+                contact_8["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_8["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_8["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_8_name = f"{contact_8['Name']} {contact_8['Surname']}"
+
+            if contact_choosen == contact_9_name:
+
+                contact_9["Name"] = input("Enter the name of the contact: ")
+
+                contact_9["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_9["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_9["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_9_name = f"{contact_9['Name']} {contact_9['Surname']}"
+
+            if contact_choosen == contact_10_name:
+
+                contact_10["Name"] = input("Enter the name of the contact: ")
+
+                contact_10["Surname"] = input("Enter the surname of the contact: ")
+
+                contact_10["Phone number"] = input("Enter the phone number of the contact: ")
+
+                contact_10["Home adress"] = input("Enter the home adress of the contact: ")
+
+                contact_10_name = f"{contact_10['Name']} {contact_10['Surname']}"
+
             else:
-                print("Err404op: Unknown Operation")
-                break
+                print("Err:ListNotFound")
 
+        elif operation == 5:
 
+            select_contact()
 
-# * (C) - ODYSSEUS ABRAHAM KIRIKOPOULOS - ALL RIGHTS RESERVED - 2022 *
+            if contact_choosen == contact_1_name:
+
+                contact_1["Name"] = ""
+
+                contact_1["Surname"] = ""
+
+                contact_1["Phone number"] = ""
+
+                contact_1["Home adress"] = ""
+
+                contact_1_name = ""
+                
+            if contact_choosen == contact_2_name:
+
+                contact_2["Name"] = ""
+
+                contact_2["Surname"] = ""
+
+                contact_2["Phone number"] = ""
+
+                contact_2["Home adress"] = ""
+
+                contact_2_name = ""
+                
+            if contact_choosen == contact_3_name:
+
+                contact_3["Name"] = ""
+
+                contact_3["Surname"] = ""
+
+                contact_3["Phone number"] = ""
+
+                contact_3["Home adress"] = ""
+
+                contact_3_name = ""
+                
+            if contact_choosen == contact_4_name:
+
+                contact_4["Name"] = ""
+
+                contact_4["Surname"] = ""
+
+                contact_4["Phone number"] = ""
+
+                contact_4["Home adress"] = ""
+
+                contact_4_name = ""
+                
+            if contact_choosen == contact_5_name:
+
+                contact_5["Name"] = ""
+
+                contact_5["Surname"] = ""
+
+                contact_5["Phone number"] = ""
+
+                contact_5["Home adress"] = ""
+
+                contact_5_name = ""
+                
+            if contact_choosen == contact_6_name:
+
+                contact_6["Name"] = ""
+
+                contact_6["Surname"] = ""
+
+                contact_6["Phone number"] = ""
+
+                contact_6["Home adress"] = ""
+
+                contact_6_name = ""
+                
+            if contact_choosen == contact_7_name:
+
+                contact_7["Name"] = ""
+
+                contact_7["Surname"] = ""
+
+                contact_7["Phone number"] = ""
+
+                contact_7["Home adress"] = ""
+
+                contact_7_name = ""
+                
+            if contact_choosen == contact_8_name:
+
+                contact_8["Name"] = ""
+
+                contact_8["Surname"] = ""
+
+                contact_8["Phone number"] = ""
+
+                contact_8["Home adress"] = ""
+
+                contact_8_name = ""
+                
+            if contact_choosen == contact_9_name:
+
+                contact_9["Name"] = ""
+
+                contact_9["Surname"] = ""
+
+                contact_9["Phone number"] = ""
+
+                contact_9["Home adress"] = ""
+
+                contact_9_name = ""
+                
+            if contact_choosen == contact_10_name:
+
+                contact_10["Name"] = ""
+
+                contact_10["Surname"] = ""
+
+                contact_10["Phone number"] = ""
+
+                contact_10["Home adress"] = ""
+
+                contact_10_name = ""
+
+            else:
+                print("Err:ContactNotFound")
+
+        else:
+            print("Err:OperationNotFound")
