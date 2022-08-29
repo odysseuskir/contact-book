@@ -1,7 +1,7 @@
 '''
 Authors: Odysseus-Abraham Kirikopoulos
 License: GNU General Public License v3.0
-Version: 1.2 beta
+Version: 1.2 Prebuild 1
 '''
 
 contact_1_name = ""
@@ -34,7 +34,7 @@ def select_contact():
 
 print("Author: Odysseus-Abraham Kirikopoulos")
 print("License: GNU General Public License v3.0")
-print("Build Version: 1.2 Beta")
+print("Build Version: 1.2 Prebuild 1")
 
 print("\nContact List\nSelect an operation")
 
