@@ -1,3 +1,6 @@
+# End of life
+This project is no longer maintained. I have lost motivation to work on this project. For now, this project will be archived.
+
 # Contact Book
 These are the files for the Contact Book Python project.
 
